@@ -9,6 +9,7 @@ random_number = random.randint(1, 11)
 
 print(f'random number is: {random_number}\n')  # it will print random int number from defined range
 
+# Logic for answer depending of randomly generated value
 if random_number == 1:
     answer = "Yes - definitely"
 elif random_number == 2:
@@ -34,6 +35,7 @@ elif random_number == 11:
 else:
     answer = "Error"
 
+# Logic to consider cases when some information of user is missing (name, question, both)
 if len(name) == 0 and len(question) == 0:
     question = 'Hi there, how can we call you ?!'
 elif not len(name) or name.isspace() and len(question) > 0:
@@ -43,5 +45,6 @@ elif len(question) == 0 or question.isspace() and len(name) > 0:
 else:
     question = f'{name} asks: {question}'
 
+# Change/remove the values for the variables "name", "question" and compare the difference in the printed result.
 print(question)
 print("Magic 8-Ball's answer:", answer)
