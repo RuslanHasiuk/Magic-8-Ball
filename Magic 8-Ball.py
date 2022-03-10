@@ -1,12 +1,24 @@
 import random
 
-name = ''
+print('''What if the asker does not provide a name, such that the value of name is an empty string?
+Let\'s add logic for this:
+- If the name is an empty string or string is a whitespace -  it will only print the question.
+- Else, the player’s name and question are both printed.
+''')
+
+name = ' '
 question = 'Will i earn my first million in 2022?'
 answer = ''
 
 random_number = random.randint(1, 11)
 
-print(random_number) #it will print random int number from defined range
+print(f'random number is: {random_number}\n') #it will print random int number from defined range
+
+if not len(name) or name.isspace():
+    question = f'Question: {question}'
+else:
+    question = f'{name} asks: {question}'
+
 
 if random_number == 1:
   answer = "Yes - definitely"
@@ -33,6 +45,6 @@ elif random_number == 11:
 else:
    answer = "Error"
 
-print(name, 'asks:', question)
+print(question)
 print("Magic 8-Ball's answer:", answer)
 
